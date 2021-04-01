@@ -1,0 +1,7 @@
+{% extends "chair812/base.html" %}
+{% block header %}{{ title }}{% endblock header %}
+{% block content %}
+    {% for i in list %}
+        <li>{{ i }}</li>
+    {% endfor %}
+{% endblock content %}

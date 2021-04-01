@@ -1,0 +1,19 @@
+{% extends "chair812/base.html" %}
+
+{% block content %}
+    <h1>Professors List</h1>
+
+    {% if professors_list %}
+    <ul>
+
+      {% for professor in professors_list %}
+      <li>
+        <a href="{{ professor.get_absolute_url }}">{{ professor.name }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no professors to display.</p>
+    {% endif %} 
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "chair812/base.html" %}
+
+{% block content %}
+    {% if groups_list %}
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Выберите группу</h4>
+                <div class="list-group">
+                    {% for group in groups_list %}
+                        <a href="{{ group.get_absolute_url }}" class="list-group-item">{{ group.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <p>There are no groups to display.</p>
+    {% endif %}
+{% endblock %}

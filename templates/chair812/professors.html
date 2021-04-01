@@ -1,0 +1,18 @@
+{% extends "chair812/base.html" %}
+
+{% block content %}
+    {% if professors_list %}
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Сотрудники кафедры 812</h4>
+                <div class="list-group">
+                    {% for professor in professors_list %}
+                        <a  class="list-group-item">{{ professor.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <p>Преподаватели отсутствуют.</p>
+    {% endif %}
+{% endblock %}
