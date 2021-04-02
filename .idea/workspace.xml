@@ -2,13 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="919a5833-d3d9-440c-bdb2-73ec767a3584" name="Default Changelist" comment="ghjk">
-      <change afterPath="$PROJECT_DIR$/.idea/kaf812.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/djangoProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/djangoProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/professors/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/professors/migrations/0002_groups.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/professors/migrations/0003_usersxprofessors.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/professors/migrations/0004_tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/professors/migrations/0005_auto_20210321_1324.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/professors/migrations/0006_tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/professors/migrations/0007_auto_20210321_1328.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/professors/migrations/0008_auto_20210330_2014.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/professors/migrations/0009_auto_20210330_2057.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/professors/migrations/0010_auto_20210330_2206.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/professors/migrations/0011_auto_20210330_2211.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/professors/migrations/0012_auto_20210330_2216.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/professors/migrations/0013_professortypes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/professors/migrations/0014_auto_20210331_0053.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/professors/migrations/0015_auto_20210402_1356.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +232,7 @@
       <workItem from="1617304652335" duration="2641000" />
       <workItem from="1617359661119" duration="4795000" />
       <workItem from="1617366097209" duration="304000" />
-      <workItem from="1617366413763" duration="1226000" />
+      <workItem from="1617366413763" duration="1594000" />
     </task>
     <task id="LOCAL-00001" summary="ghjk">
       <created>1617306593504</created>
