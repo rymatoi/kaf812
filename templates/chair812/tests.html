@@ -1,0 +1,50 @@
+{% extends "chair812/base.html" %}
+{% block table %}
+    <form class="" method="post">
+        {% csrf_token %}
+        {{ formset.management_form }}
+        <table>
+            <thead>
+            <tr>
+                <th>ФИО</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>sum</th>
+            </tr>
+            </thead>
+            {% for form in formset %}
+                <tbody>
+                <tr>
+                    <td>
+                        {{ form.instance.student.name }}
+                    </td>
+                    {{ form.id }}
+                    <td>{{ form.z1 }}</td>
+                    <td>{{ form.z2 }}</td>
+                    <td>{{ form.z3 }}</td>
+                    <td>{{ form.z4 }}</td>
+                    <td>{{ form.z5 }}</td>
+                    <td>{{ form.z6 }}</td>
+                    <td>{{ form.z7 }}</td>
+                    <td>{{ form.z8 }}</td>
+                    <td>{{ form.z9 }}</td>
+                    <td>{{ form.z10 }}</td>
+                    <td>{{ form.sum }}</td>
+
+
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+{% endblock %}

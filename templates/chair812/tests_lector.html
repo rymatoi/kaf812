@@ -1,0 +1,43 @@
+{% extends "chair812/base.html" %}
+{% block table %}
+    <table>
+        <thead>
+        <tr>
+            <th>ФИО</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+            <th>sum</th>
+        </tr>
+        </thead>
+        {% for form in formset %}
+            <tbody>
+            <tr>
+                <td>
+                    {{ form.instance.student.name }}
+                </td>
+                {{ form.id }}
+                <td>{{ form.z1.value }}</td>
+                <td>{{ form.z2.value }}</td>
+                <td>{{ form.z3.value }}</td>
+                <td>{{ form.z4.value }}</td>
+                <td>{{ form.z5.value }}</td>
+                <td>{{ form.z6.value }}</td>
+                <td>{{ form.z7.value }}</td>
+                <td>{{ form.z8.value }}</td>
+                <td>{{ form.z9.value }}</td>
+                <td>{{ form.z10.value }}</td>
+                <td>{{ form.sum.value }}</td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
