@@ -6,7 +6,7 @@ table {
 }
 
 th, td:first-child, td:last-child{
-    background: #AFCDE7;
+    background: #00008B;
     color: white;
     padding:  -1px 20px;
 }
@@ -15,12 +15,10 @@ th, td:first-child, td:last-child{
 th, td {
     border-style: solid;
     border-width: 0 1px 1px 0;
-    border-color: white;
+    border-color: #00008B;
 }
 
-tr {
-    background: #D8E6F3;
-}
+
 
 th:first-child, td:first-child {
     text-align: left;
@@ -35,6 +33,6 @@ form input {
 
 
 table tr:hover td{
-    background: #099; /* Цвет фона при наведении */
+    background: #87CEFA; /* Цвет фона при наведении */
     color: #000; /* Цвет текста при наведении */
    }

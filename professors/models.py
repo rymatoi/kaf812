@@ -55,3 +55,7 @@ class ProfessorTypes(models.Model):
 
     def get_absolute_url(self):
         return f'/groups/{self.pk}/'
+
+
+class Discipline(models.Model):
+    name = models.CharField(max_length=100)

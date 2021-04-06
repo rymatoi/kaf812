@@ -62,17 +62,28 @@ class ReferenceFormSetView(ModelFormSetView):
     factory_kwargs = {
         'extra': 0,
         'widgets': {
-            'z1': TextInput(attrs={'size': '1'}),
-            'z2': TextInput(attrs={'size': '1'}),
-            'z3': TextInput(attrs={'size': '1'}),
-            'z4': TextInput(attrs={'size': '1'}),
-            'z5': TextInput(attrs={'size': '1'}),
-            'z6': TextInput(attrs={'size': '1'}),
-            'z7': TextInput(attrs={'size': '1'}),
-            'z8': TextInput(attrs={'size': '1'}),
-            'z9': TextInput(attrs={'size': '1'}),
-            'z10': TextInput(attrs={'size': '1'}),
-            'sum': TextInput(attrs={'size': '1'}),
+            'z1': TextInput(
+                attrs={'size': '1', 'id': 'input', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                       'type': "number"}),
+            'z2': TextInput(
+                attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0', 'type': "number"}),
+            'z3': TextInput(
+                attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0', 'type': "number"}),
+            'z4': TextInput(
+                attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0', 'type': "number"}),
+            'z5': TextInput(
+                attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0', 'type': "number"}),
+            'z6': TextInput(
+                attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0', 'type': "number"}),
+            'z7': TextInput(
+                attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0', 'type': "number"}),
+            'z8': TextInput(
+                attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0', 'type': "number"}),
+            'z9': TextInput(
+                attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0', 'type': "number"}),
+            'z10': TextInput(
+                attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0', 'type': "number"}),
+            'sum': TextInput(attrs={'size': '1', 'id': 'result'}),
 
         }
     }

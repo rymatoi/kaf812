@@ -3,7 +3,7 @@
     <form class="" method="post">
         {% csrf_token %}
         {{ formset.management_form }}
-        <table>
+        <table id="tbl">
             <thead>
             <tr>
                 <th>ФИО</th>
@@ -47,4 +47,28 @@
         </table>
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
+    <script>
+        function isGood(str){
+            return /^[0-2]$/.test(str)
+        }
+        function input_changed(element) {
+            console.log(element.value)
+            console.log(element.validity.rangeOverflow)
+
+            if (!isGood(element.value.toString())){
+                alert('Вы ввели неправильное значение, введите значение от 0 до 2.')
+                element.value = 0
+            }
+            let row = element.name.split('-')[1]
+            let sum_name = ['form', row, 'sum'].join('-');
+            let sum_input = document.getElementsByName(sum_name)[0];
+            let sum_result = 0
+            for (let i = 1; i <= 10; i++) {
+                let z_name = ['form', row, 'z' + i.toString()].join('-');
+                let z_input = document.getElementsByName(z_name)[0];
+                sum_result += Number(z_input.value);
+            }
+            sum_input.value = sum_result;
+        }
+    </script>
 {% endblock %}
