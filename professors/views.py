@@ -57,7 +57,7 @@ class GroupsListView(generic.ListView):
 
 class ReferenceFormSetView(ModelFormSetView):
     model = Tests
-    template_name = "chair812/tests_lector.html"
+    template_name = "chair812/tests.html"
     fields = ['z1', 'z2', 'z3', 'z4', 'z5', 'z6', 'z7', 'z8', 'z9', 'z10', 'sum']
     factory_kwargs = {
         'extra': 0,
@@ -67,7 +67,7 @@ class ReferenceFormSetView(ModelFormSetView):
                        'type': "number"}),
             'z2': TextInput(
                 attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0', 'type': "number",
-                       "readonly": "True"}),
+                       }),
             'z3': TextInput(
                 attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0', 'type': "number"}),
             'z4': TextInput(
@@ -95,9 +95,92 @@ class ReferenceFormSetView(ModelFormSetView):
         group_id = self.kwargs.get('groupid', None)
         group = Groups.objects.filter(pk=group_id).first()
         if group.seminarist == professor.professor:
-            self.template_name = "chair812/tests.html"
+            self.factory_kwargs = {
+                'extra': 0,
+                'widgets': {
+                    'z1': TextInput(
+                        attrs={'size': '1', 'id': 'input', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number"}),
+                    'z2': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number",
+                               }),
+                    'z3': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number"}),
+                    'z4': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number"}),
+                    'z5': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number"}),
+                    'z6': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number"}),
+                    'z7': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number"}),
+                    'z8': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number"}),
+                    'z9': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number"}),
+                    'z10': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number"}),
+                    'sum': TextInput(attrs={'size': '1', 'id': 'result'}),
+
+                }
+            }
         elif group.lector == professor.professor:
-            self.template_name = "chair812/tests_lector.html"
+            self.factory_kwargs = {
+                'extra': 0,
+                'widgets': {
+                    'z1': TextInput(
+                        attrs={'size': '1', 'id': 'input', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number",
+                               "readonly": "True"}),
+                    'z2': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number",
+                               "readonly": "True"}),
+                    'z3': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number",
+                               "readonly": "True"}),
+                    'z4': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number",
+                               "readonly": "True"}),
+                    'z5': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number",
+                               "readonly": "True"}),
+                    'z6': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number",
+                               "readonly": "True"}),
+                    'z7': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number",
+                               "readonly": "True"}),
+                    'z8': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number",
+                               "readonly": "True"}),
+                    'z9': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number",
+                               "readonly": "True"}),
+                    'z10': TextInput(
+                        attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
+                               'type': "number",
+                               "readonly": "True"}),
+                    'sum': TextInput(attrs={'size': '1', 'id': 'result'}),
+
+                }
+            }
 
         return Tests.objects.filter(student__group_id=group_id).all()
 
