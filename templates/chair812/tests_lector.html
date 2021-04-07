@@ -1,6 +1,30 @@
 {% extends "chair812/base.html" %}
 {% block table %}
-    <table>
+    <style>
+        table {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 14px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th, td {
+            border-style: solid;
+            border-width: 0 1px 1px 0;
+            border-color: #00008B;
+        }
+
+        th, td:first-child, td:last-child {
+            background: #00008B;
+            color: white;
+            padding: 0px 10px;
+        }
+
+        .first {
+            border-collapse: collapse;
+        }
+    </style>
+    <table class="view">
         <thead>
         <tr>
             <th>ФИО</th>

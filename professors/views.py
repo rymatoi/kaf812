@@ -66,7 +66,8 @@ class ReferenceFormSetView(ModelFormSetView):
                 attrs={'size': '1', 'id': 'input', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0',
                        'type': "number"}),
             'z2': TextInput(
-                attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0', 'type': "number"}),
+                attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0', 'type': "number",
+                       "readonly": "True"}),
             'z3': TextInput(
                 attrs={'size': '1', 'onchange': 'input_changed(this);', 'max': '2', 'min': '0', 'type': "number"}),
             'z4': TextInput(

@@ -5,6 +5,9 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+class Discipline(models.Model):
+    name = models.CharField(max_length=100)
+
 
 class Professors(models.Model):
     name = models.CharField(max_length=20)
@@ -15,6 +18,8 @@ class Professors(models.Model):
 
 class Groups(models.Model):
     name = models.CharField(max_length=20, null=True)
+    discipline = models.ForeignKey(
+        Discipline, on_delete=models.CASCADE, related_name='discipline', null=True)
     lector = models.ForeignKey(
         Professors, on_delete=models.CASCADE, related_name='lector', null=True)
     seminarist = models.ForeignKey(
@@ -55,7 +60,3 @@ class ProfessorTypes(models.Model):
 
     def get_absolute_url(self):
         return f'/groups/{self.pk}/'
-
-
-class Discipline(models.Model):
-    name = models.CharField(max_length=100)
