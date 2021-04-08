@@ -38,10 +38,6 @@ class Students(models.Model):
     name = models.CharField(max_length=100)
     group = models.ForeignKey(
         Groups, on_delete=models.CASCADE, null=True)
-
-
-class Tests(models.Model):
-    student = models.ForeignKey(Students, on_delete=models.CASCADE)
     z1 = models.CharField(max_length=1, default='0')
     z2 = models.CharField(max_length=1, default='0')
     z3 = models.CharField(max_length=1, default='0')

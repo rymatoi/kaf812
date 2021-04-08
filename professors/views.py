@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.views import generic
 from extra_views import ModelFormSetView
 
-from professors.models import Professors, Groups, UsersXProfessors, Tests, Students, ProfessorTypes
+from professors.models import Professors, Groups, UsersXProfessors, Students, ProfessorTypes
 
 
 def formula(request):
@@ -56,7 +56,7 @@ class GroupsListView(generic.ListView):
 
 
 class ReferenceFormSetView(ModelFormSetView):
-    model = Tests
+    model = Students
     template_name = "chair812/tests.html"
     fields = ['z1', 'z2', 'z3', 'z4', 'z5', 'z6', 'z7', 'z8', 'z9', 'z10', 'sum']
     factory_kwargs = {
@@ -182,7 +182,7 @@ class ReferenceFormSetView(ModelFormSetView):
                 }
             }
 
-        return Tests.objects.filter(student__group_id=group_id).all()
+        return Students.objects.filter(group_id=group_id).all()
 
     def get_success_url(self):
         return reverse('home')
