@@ -74,6 +74,11 @@ class ReferenceFormSetView(ModelFormSetView):
             context['professor_type'] = 1
         elif group.lector == professor.professor:
             context['professor_type'] = 2
+
+        context['lector'] = group.lector
+        context['seminarist'] = group.seminarist
+        context['group'] = group.name
+
         return context
 
     def get_queryset(self):
@@ -108,7 +113,7 @@ class ReferenceFormSetView(ModelFormSetView):
                            "readonly": "True"})
             self.factory_kwargs['widgets']['sum'] = TextInput(
                 attrs={'size': '1'})
-        return Students.objects.filter(group_id=group_id).all()
+        return Students.objects.filter(group_id=group_id).order_by('name')
 
     def get_success_url(self):
         return reverse('home')

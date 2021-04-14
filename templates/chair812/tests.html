@@ -1,77 +1,80 @@
 {% extends "chair812/base.html" %}
 {% block table %}
-    <form class="" method="post">
-        {% csrf_token %}
-        {{ formset.management_form }}
-        <table id="tbl">
-            <thead>
-            <tr>
-                <th>ФИО</th>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
-                <th>4</th>
-                <th>5</th>
-                <th>6</th>
-                <th>7</th>
-                <th>8</th>
-                <th>9</th>
-                <th>10</th>
-                <th>sum</th>
-            </tr>
-            </thead>
-            {% for form in formset %}
-                <tbody>
-                <tr>
-                    <td>
-                        {{ form.instance.name }}
-                    </td>
-                    {{ form.id }}
-                    <td>{{ form.z1 }}</td>
-                    <td>{{ form.z2 }}</td>
-                    <td>{{ form.z3 }}</td>
-                    <td>{{ form.z4 }}</td>
-                    <td>{{ form.z5 }}</td>
-                    <td>{{ form.z6 }}</td>
-                    <td>{{ form.z7 }}</td>
-                    <td>{{ form.z8 }}</td>
-                    <td>{{ form.z9 }}</td>
-                    <td>{{ form.z10 }}</td>
-                    <td>{{ form.sum }}</td>
+<form class="" method="post">
+    {% csrf_token %}
+    {{ formset.management_form }}
+    <div>Группа: {{group}}</div>
+    <div>Лектор: {{lector.name}}</div>
+    <div>Преподаватель: {{seminarist.name}}</div>
+    <table id="tbl">
+        <thead>
+        <tr>
+            <th>ФИО</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+            <th>sum</th>
+        </tr>
+        </thead>
+        {% for form in formset %}
+        <tbody>
+        <tr>
+            <td>
+                {{ form.instance.name }}
+            </td>
+            {{ form.id }}
+            <td>{{ form.z1 }}</td>
+            <td>{{ form.z2 }}</td>
+            <td>{{ form.z3 }}</td>
+            <td>{{ form.z4 }}</td>
+            <td>{{ form.z5 }}</td>
+            <td>{{ form.z6 }}</td>
+            <td>{{ form.z7 }}</td>
+            <td>{{ form.z8 }}</td>
+            <td>{{ form.z9 }}</td>
+            <td>{{ form.z10 }}</td>
+            <td>{{ form.sum }}</td>
 
 
-                </tr>
+        </tr>
 
-            {% endfor %}
-            </tbody>
-        </table>
-        {% if professor_type == 1 %}
-            <button type="submit" class="btn btn-primary">Сохранить</button>
-        {% endif %}
-    </form>
-    <script>
-        function isGood(str) {
-            return /^[0-2]$/.test(str)
+        {% endfor %}
+        </tbody>
+    </table>
+    {% if professor_type == 1 %}
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    {% endif %}
+</form>
+<script>
+    function isGood(str) {
+        return /^[0-2]$/.test(str)
+    }
+
+    function input_changed(element) {
+        console.log(element.value)
+        console.log(element.validity.rangeOverflow)
+
+        if (!isGood(element.value.toString())) {
+            alert('Вы ввели неправильное значение, введите значение от 0 до 2.')
+            element.value = 0
         }
-
-        function input_changed(element) {
-            console.log(element.value)
-            console.log(element.validity.rangeOverflow)
-
-            if (!isGood(element.value.toString())) {
-                alert('Вы ввели неправильное значение, введите значение от 0 до 2.')
-                element.value = 0
-            }
-            let row = element.name.split('-')[1]
-            let sum_name = ['form', row, 'sum'].join('-');
-            let sum_input = document.getElementsByName(sum_name)[0];
-            let sum_result = 0
-            for (let i = 1; i <= 10; i++) {
-                let z_name = ['form', row, 'z' + i.toString()].join('-');
-                let z_input = document.getElementsByName(z_name)[0];
-                sum_result += Number(z_input.value);
-            }
-            sum_input.value = sum_result;
+        let row = element.name.split('-')[1]
+        let sum_name = ['form', row, 'sum'].join('-');
+        let sum_input = document.getElementsByName(sum_name)[0];
+        let sum_result = 0
+        for (let i = 1; i <= 10; i++) {
+            let z_name = ['form', row, 'z' + i.toString()].join('-');
+            let z_input = document.getElementsByName(z_name)[0];
+            sum_result += Number(z_input.value);
         }
-    </script>
+        sum_input.value = sum_result;
+    }
+</script>
 {% endblock %}
