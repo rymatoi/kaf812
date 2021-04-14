@@ -31,6 +31,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^professors/$', views.ProfessorsListView.as_view(), name='professors'),
     path('login/', LoginView.as_view(), name='login'),
-    #url(r'^tests/$', ReferenceFormSetView.as_view(), name='tests'),
+    # url(r'^tests/$', ReferenceFormSetView.as_view(), name='tests'),
     path('formula/', views.formula, name='formula'),
+    url(r'^administration/', views.AllGroupsListView.as_view(), name='administration'),
 ]
